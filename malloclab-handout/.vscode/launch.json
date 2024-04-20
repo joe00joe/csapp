@@ -1,0 +1,26 @@
+{
+    "version": "0.2",
+    "configurations": [
+        {
+            "name": "C Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/mdriver", // 可执行文件路径
+            "args": ["-V", "-f", "short1-bal.rep"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build", // 在启动调试之前执行的任务，这里是build任务
+            "miDebuggerPath": "/usr/bin/gdb" // GDB的路径
+        }
+    ]
+}
